@@ -1,60 +1,53 @@
-
-alert("Bienvenido a piedra papel o tijera!!!");
-
-
-
-var piedra=0;
-var papel=1;
-var tijera=2;
-
-var opcionUsuario;
-var opcionMaquina=2;
-
-var opciones[piedra, papel, tijera]
-
+//Funcion de numero aleatorio
 function aleatorio(minimo, maximo) {
-     var numero=math.floor(math.random()* (maximo - minimo +1)+ minimo);
+     var numero=Math.floor( Math.random() * (maximo - minimo + 1) + minimo );
      return numero;
 }
 
+//Declaracion de variables
+var piedra=0;
+var papel=1;
+var tijera=2;
+var opciones=["Piedra", "Papel", "Tijera"];
+var opcionUsuario;
 
+var opcionMaquina=aleatorio(0,2);
 
-opcionUsuario= prompt("¿Qué Eliges?\n Piedra: 0 / Papel:1 / Tijera:2", 0);
+alert("!!! Bienvenido a Piedra Papel o Tijera!!!")
+opcionUsuario=prompt("Que eliges?\nPiedra: 0 / Papel: 1 / Tijera: 2\n", 0);
 
+alert("Elegiste"+" "+opciones[opcionUsuario]);
+alert("La computadora eligio"+" "+opciones[opcionMaquina]);
 
 if (opcionUsuario==piedra) {
-     alert("Elegiste Piedra");
-
-     if (opcionMaquina==piedra) {
-          alert("piedra & piedra  !!! Empate !!!");
-     } else if (opcionMaquina==papel) {
-          alert("piedra & papel  !!! Perdiste !!!");
-     } else {
-          alert("piedra & tijera  !!! Ganaste !!!");
+     if (opcionMaquina=piedra) {
+          alert("Empate!!!");
+     } else if (opcionMaquina=papel) {
+          alert("Perdiste!!!");
+     } else if (opcionMaquina=tijera) {
+          alert("Ganaste!!!")
      }
 
 } else if (opcionUsuario==papel) {
-     alert("Elegiste Papel");
 
-     if (opcionMaquina==piedra) {
-          alert("papel & piedra  !!! Ganaste !!!");
-     } else if (opcionMaquina==papel) {
-          alert("papel & papel  !!! Empate !!!");
-     } else {
-          alert("papel & tijera  !!! Perdiste !!!");
+     if (opcionMaquina=piedra) {
+          alert("Ganaste!!!");
+     } else if (opcionMaquina=papel) {
+          alert("Empate!!!");
+     } else if (opcionMaquina=tijera) {
+          alert("Perdiste!!!")
      }
 
-} else if (opcionUsuario==tijera) {
-     alert("Elegiste Tijera");
+} else if(opcionUsuario==tijera) {
 
-     if (opcionMaquina==piedra) {
-          alert("tijera & piedra  !!! Perdiste !!!");
-     } else if (opcionMaquina==papel) {
-          alert("tijera & papel  !!! Ganaste !!!");
-     } else {
-          alert("tijera & tijera  !!! Empate !!!");
+     if (opcionMaquina=piedra) {
+          alert("Perdiste!!!");
+     } else if (opcionMaquina=papel) {
+          alert("Ganaste!!!");
+     } else if (opcionMaquina=tijera) {
+          alert("Empate!!!")
      }
 
 } else {
-     alert("Elige una opcion valida!!!, elegiste"+opcionUsuario);
+     alert("Elige una opcion valida");
 }
