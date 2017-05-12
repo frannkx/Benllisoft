@@ -51,3 +51,9 @@ if (opcionUsuario==piedra) {
 } else {
      alert("Elige una opcion valida");
 }
+
+/*Instalar en atom
+https://atom.io/packages/atom-runner
+https://vwannabe.com/2016/05/26/how-to-use-github-and-atom/
+atom runner
+git plus
