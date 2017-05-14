@@ -23,7 +23,7 @@ var campo = [  [1,0,0],
                [0,1,0],
                [1,1,1]];
 var x,y;
-var textos=["Cesped","Bomba"];
+var textos=["Cesped ","Bomba "];
 
 alert("Estas en un campo minado\n"+"Elije una posición entre el 0 y el 2 para el eje X y para el eje Y");
 x=prompt("Posición en x? (entre 0 y 2)");
