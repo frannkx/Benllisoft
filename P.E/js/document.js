@@ -15,17 +15,22 @@ function mostrar(pos){
 }
 navigator.geolocation.getCurrentPosition(mostrar);
 */
+function Pokemon(nombrePokemon, vidaPoke, ataPoke){
+     var EstructuraPokemon={
+          nombre:nombrePokemon,
+          vida:vidaPoke,
+          ataque:ataPoke,
+          datos:{tipo:"Tierra", debilidad:"Fuego"}
+     };
+     return EstructuraPokemon;
+}
 
-var Pokemon={
-     nombre:"Pikachu",
-     tipo:"Eléctrico",
-     vida:100,
-     ataque:55
-};
+var pikachu=Pokemon("Pikachu", 100, 55);
+var bulbasaur=Pokemon("Bulbasaur", 90, 50);
+// bulbasaur.nombre="bulbasaur";
+// bulbasaur.vida="90";
+// bulbasaur.ataque="50";
 
-var pikachu=Pokemon;
-var bulbasaur=Pokemon;
-bulbasaur.nombre="Bulvasaur";
-bulbasaur.tipo="Tierra";
-bulbasaur.vida="90";
-bulbasaur.ataque="50";
+console.log(bulbasaur);
+
+// document.write(bulbasaur.datos.tipo);
