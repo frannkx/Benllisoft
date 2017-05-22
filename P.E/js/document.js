@@ -16,7 +16,7 @@ function inicio(){
      nombrePokemon.innerText=rattata.nombre;
      datosPokemon.innerText="Vida: "+rattata.vida+" "+"Ataque: "+rattata.ataque;
      if(nombrePokemon.innerText=="Rattata"){
-          document.body.img.src="img/rattata.png";
+          document.getElementById("imagen").src="img/rattata.png";
      }
 }
 
