@@ -1,5 +1,28 @@
 //Document Object Model
 
+function Pokemon(n,v,a){
+     this.grito="Pika!";
+     this.nombre=n;
+     this.vida=v;
+     this.ataque=a;
+     this.gritar=function(){
+          alert(this.grito);
+     }
+}
+
+function inicio(){
+     var rattata=new Pokemon("Rattata", 100, 55);
+     rattata.vida=rattata.vida-13;
+     nombrePokemon.innerText=rattata.nombre;
+     datosPokemon.innerText="Vida: "+rattata.vida+" "+"Ataque: "+rattata.ataque;
+     if(nombrePokemon.innerText=="Rattata"){
+          document.body.img.src="img/rattata.png";
+     }
+}
+
+
+
+
 /*navigator controla opciones especiales del navegador,
  windows ventana ,
   document html,
@@ -15,7 +38,7 @@ function mostrar(pos){
 }
 navigator.geolocation.getCurrentPosition(mostrar);
 */
-function Pokemon(nombrePokemon, vidaPoke, ataPoke){
+/*function Pokemon(nombrePokemon, vidaPoke, ataPoke){
      var EstructuraPokemon={
           nombre:nombrePokemon,
           vida:vidaPoke,
@@ -31,6 +54,6 @@ var bulbasaur=Pokemon("Bulbasaur", 90, 50);
 // bulbasaur.vida="90";
 // bulbasaur.ataque="50";
 
-console.log(bulbasaur);
+console.log(bulbasaur);*/
 
 // document.write(bulbasaur.datos.tipo);
