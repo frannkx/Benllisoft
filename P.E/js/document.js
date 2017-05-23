@@ -11,12 +11,15 @@ function Pokemon(n,v,a){
 }
 
 function inicio(){
-     var rattata=new Pokemon("Rattata", 100, 55);
+     var rattata=new Pokemon("Pikachu", 100, 55);
      rattata.vida=rattata.vida-13;
      nombrePokemon.innerText=rattata.nombre;
      datosPokemon.innerText="Vida: "+rattata.vida+" "+"Ataque: "+rattata.ataque;
      if(nombrePokemon.innerText=="Rattata"){
           document.getElementById("imagen").src="img/rattata.png";
+     }
+     if(nombrePokemon.innerText=="Pikachu"){
+          document.getElementById("imagen").src="img/pikachu.png";
      }
 }
 
