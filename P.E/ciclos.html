@@ -4,14 +4,28 @@
           <meta charset="utf-8">
           <title>Ciclos</title>
           <script type="text/javascript">
-          alert ("No funciona!");
+          //alert ("No funciona!");
           function inicio(){
                var c=document.getElementById("caja");
-               var numero = 1;
-               var residuo;
-               residuo=numero/2;
-               c.innerHTML=residuo;
+               var t=document.getElementById('ale');
+               var b=document.getElementById("boton");
+               b.addEventListener("click",calcular);
 
+               var numeros=1;
+               var residuo;
+               while (numeros<=50) {
+                    residuo = numeros % 2;
+                    if (residuo==0) {
+                         c.innerHTML+=" "+numeros;
+                    }
+                    numeros++;
+               }
+               //-----
+               // var numero = 102;
+               // var residuo;
+               // residuo=numero%2;
+               // c.innerHTML=residuo;
+               //------
           //      var gritos=10;
           //
           //      while (gritos>0) {
@@ -19,11 +33,18 @@
           //           gritos--;
           //      }
           //      c.innerHTML+="h!";
-          // }
+           }
+           //fin de funcion inicio
+
+           function calcular(){
+               alert ("Gracias por tocarme ;)")
+           }
           </script>
      </head>
      <body>
-          <div id="caja">G</div>
+          <input type="text" id="ale"/>
+          <input type="button" id="boton" value="tocame~"/>
+          <div id="caja"></div>
           <div>Otra caja</div>
           <script type="text/javascript">
           inicio();
