@@ -5,21 +5,21 @@
           <title>Ciclos</title>
           <script type="text/javascript">
           //alert ("No funciona!");
+          var c, t, b;
           function inicio(){
-               var c=document.getElementById("caja");
-               var t=document.getElementById('ale');
-               var b=document.getElementById("boton");
+               c=document.getElementById("caja");
+               t=document.getElementById('ale');
+               b=document.getElementById("boton");
                b.addEventListener("click",calcular);
 
-               var numeros=1;
-               var residuo;
-               while (numeros<=50) {
-                    residuo = numeros % 2;
-                    if (residuo==0) {
-                         c.innerHTML+=" "+numeros;
-                    }
-                    numeros++;
-               }
+               // var residuo;
+               // while (numeros<=50) {
+               //      residuo = numeros % 2;
+               //      if (residuo==0) {
+               //           c.innerHTML+=" "+numeros;
+               //      }
+               //      numeros++;
+               // }
                //-----
                // var numero = 102;
                // var residuo;
@@ -37,7 +37,17 @@
            //fin de funcion inicio
 
            function calcular(){
-               alert ("Gracias por tocarme ;)")
+               var numero = Number(t.value);
+               var calculo = 1;
+               var n=1;
+               // while (n<=numero) {
+               //      calculo=calculo*n;
+               //      n++;
+               // }
+               for (n = 1; n <= numero; n++) {
+                    calculo=calculo*n;
+               }
+               c.innerHTML=calculo;
            }
           </script>
      </head>
