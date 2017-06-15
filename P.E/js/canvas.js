@@ -1,10 +1,12 @@
-var dibujo, lienzo;
+var dibujo, lienzo, t, b;
 
 function inicio(){
+     t=document.getElementById("usuario");
+     b=document.getElementById("dibujalo");
      dibujo=document.getElementById('dibujito');
      lienzo=dibujo.getContext("2d");
 
-     dibujarGrilla(lienzo);
+     b.addEventListener("click", dibujarGrilla);
 
      lienzo.beginPath();
      lienzo.strokeStyle="green";
@@ -13,10 +15,12 @@ function inicio(){
      lienzo.stroke();
 }
 
-function dibujarGrilla(l){
+function dibujarGrilla(){
+     var l=lienzo;
+     var rayas=Number(t.value);
      var tope=300;
      var linea;
-     var anchoLinea=30;
+     var anchoLinea=tope/rayas;
      var limite=tope/anchoLinea;
      l.strokeStyle="grey";
      for (linea = 0; linea <= limite; linea++) {
