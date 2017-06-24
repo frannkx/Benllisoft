@@ -2,6 +2,13 @@ var tablero
 var fondo={
      imagenURL:"img/fondo.png"
 };
+
+var mega={
+     x:200,
+     y:100,
+     frenteURL:"megaFrente.png",
+     frenteOK:false
+};
 function inicio(){
      var canvas=document.getElementById("campo");
      tablero=canvas.getContext("2d");
