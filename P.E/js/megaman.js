@@ -1,7 +1,14 @@
 
 //Declaracion de variables globales
 
-var tablero
+var tablero;
+
+var teclas={
+     UP:38,
+     DOWN:40,
+     LEFT:37,
+     RIGHT:39
+}
 var fondo={
      imagenURL:"img/fondo.png",
      imagenOK: false
@@ -20,7 +27,9 @@ var mega={
      izquierdaOK:false,
 
      derechaURL:"img/megaDerecha.png",
-     derechaOK:false
+     derechaOK:false,
+
+     velocidad:20
 };
 
 var faraon={
@@ -51,25 +60,25 @@ function inicio(){
      fondo.imagen.src=fondo.imagenURL;
      fondo.imagen.onload=confirmarFondo;
 
-     //Imagen Megaman de Frente al cargar la pagina
-     mega.frente= new Image();
-     mega.frente.src=mega.frenteURL;
-     mega.frente.onload=confirmarFrente;
-
      //Imagen Megaman de Espaldas
      mega.atras= new Image();
      mega.atras.src=mega.atrasURL;
-     //mega.atras.onload=confirmarAtras;
+     mega.atras.onload=confirmarAtrasMega;
 
      //Imagen Megaman de lado Izquierdo
      mega.izquierda= new Image();
      mega.izquierda.src=mega.izquierdaURL;
-     //mega.izquierda.onload=confirmarFrente;
+     mega.izquierda.onload=confirmarFrenteMega;
 
-     //Imagen Megaman de lado Derecho
-     mega.derecho= new Image();
-     mega.derecho.src=mega.derechaURL;
-     //mega.izquierda.onload=confirmarFrente;
+     //Imagen Megaman de lado Derecha
+     mega.derecha= new Image();
+     mega.derecha.src=mega.derechaURL;
+     mega.derecha.onload=confirmarDerechaMega;
+
+     //Imagen Megaman de Frente al cargar la pagina
+     mega.frente= new Image();
+     mega.frente.src=mega.frenteURL;
+     mega.frente.onload=confirmarFrenteMega;
 
      //Movimiento de Megaman
      document.addEventListener("keydown", teclado);
@@ -110,8 +119,41 @@ function inicio(){
 
 }
 
-function teclado(datos){
-     console.log("tecla");
+     function teclado(datos){
+     //onsole.log("tecla");
+     var codigo = datos.keyCode;
+     if (codigo==teclas.UP) {
+          if (mega.y>=10) {
+                mega.y-=mega.velocidad;
+                confirmarAtrasMega();
+                dibujar();
+          }
+     }
+
+     if (codigo==teclas.DOWN) {
+          if (mega.y<=450) {
+               mega.y+=10;
+               confirmarFrenteMega();
+               dibujar();
+          }
+     }
+
+     if (codigo==teclas.RIGHT) {
+          if (mega.x<=450) {
+               mega.x+=10;
+               confirmarDerechaMega();
+               dibujar();
+          }
+     }
+
+     if (codigo==teclas.LEFT) {
+          if (mega.x>0) {
+               mega.x-=10;
+               confirmarIzquierdaMega();
+               dibujar();
+          }
+     }
+
 }
 
 // Movimiento por botones
@@ -151,8 +193,35 @@ function confirmarFondo(){
      dibujar();
 }
 
-function confirmarFrente(){
+function confirmarFrenteMega(){
      mega.frenteOK=true;
+     mega.atrasOK=false;
+     mega.izquierdaOK=false;
+     mega.derechaOK=false;
+     dibujar();
+}
+
+function confirmarAtrasMega(){
+     mega.frenteOK=false;
+     mega.atrasOK=true;
+     mega.izquierdaOK=false;
+     mega.derechaOK=false;
+     dibujar();
+}
+
+function confirmarIzquierdaMega(){
+     mega.frenteOK=false;
+     mega.atrasOK=false;
+     mega.izquierdaOK=true;
+     mega.derechaOK=false;
+     dibujar();
+}
+
+function confirmarDerechaMega(){
+     mega.frenteOK=false;
+     mega.atrasOK=false;
+     mega.izquierdaOK=false;
+     mega.derechaOK=true;
      dibujar();
 }
 
