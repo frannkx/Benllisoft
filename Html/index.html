@@ -7,15 +7,23 @@
      <body>
 
           <form action="#" method="POST" name="miformulario">
-               <input type="text" name="usuario"></input><br>
-               <input type="password" name="contraseña"></input><br>
-               <input type="radio" name="genero" value="masculino">masculino</input>
-               <input type="radio" name="genero" value="femenino">femenino</input><br>
-               <input type="checkbox" name="musica" value="clasica">clasica</input><br>
-               <input type="checkbox" name="musica" value="rock">rock</input><br>
-               <input type="checkbox" name="musica" value="pop">pop</input><br>
+               <label for="Usuario">Nombre de usuario</label>
+               <input type="text" name="usuario" id="Usuario"></input><br>
+               <label for="Contraseña">Contraseña</label>
+               <input type="password" name="contraseña" id="Contraseña"></input><br>
+               <label for="Masculino">Masculino</label>
+               <input type="radio" name="genero" value="masculino" id="Masculino"></input>
+               <label for="Masculino">Femenino</label>
+               <input type="radio" name="genero" value="femenino" id="Femenino"></input><br>
+               <label for="Clasica">Clasica</label>
+               <input type="checkbox" name="musica" value="clasica" id="Clasica"></input><br>
+               <label for="Rock">Rock</label>
+               <input type="checkbox" name="musica" value="rock" id="Rock"></input><br>
+               <label for="Clasica">Pop</label>
+               <input type="checkbox" name="musica" value="pop" id="Pop"></input><br>
 
-               <textarea name="mensaje" rows="10" cols="30"></textarea><br>
+               <br><label for="Comida">Tu comida favorita</label><br>
+               <textarea name="mensaje" rows="10" cols="30" id="Comida"></textarea><br>
 
                <select>
                <optgroup label="Carnes">
